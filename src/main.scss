@@ -6,6 +6,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background-color: $primary-color;
+}
+
 .footer {
   border: 1px solid $primary-color;
   width: auto;
@@ -13,4 +17,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn-like {
+  width: 32px;
+  height: 32px;
+  background-image: url(./images/like-empty.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url(./images/like-filled.svg);
+  }
 }
