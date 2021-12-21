@@ -14,3 +14,25 @@
   align-items: center;
   justify-content: center;
 }
+
+.addcomment{
+  height: 15rem;
+}
+
+.insights {
+  background-image: url('./images/Capture.PNG');
+  background-repeat: no-repeat;
+}
+
+.comments-list{
+  overflow: scroll;
+}
+
+.comment {
+    box-shadow: 8px 8px 0rem 1px rgb(0 ,0, 0) !important;
+
+}
+
+.modal-content {
+  height: 123vh;
+}
