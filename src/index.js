@@ -2,6 +2,7 @@ import './main.scss';
 import 'bootstrap';
 
 const commentsArray = JSON.parse(localStorage.getItem('commentsArray') || '[]');
+// this function used for displaying comments on the screen 
 const displayComments = (el) => {
   const ul = document.querySelector('.comments-list');
   const li = document.createElement('li');
@@ -10,6 +11,8 @@ const displayComments = (el) => {
   ul.appendChild(li);
 };
 
+// this function used to display popup window when we select comment 
+// Evren call this function in your 
 const displayPopup = (element) => {
   const modal = document.querySelector('.modal');
   modal.style.display = 'block';
@@ -46,9 +49,13 @@ const displayPopup = (element) => {
       displayComments(el);
     }
   });
+  const close = document.querySelector('.btn-close');
+  close.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
   commentsArray.forEach((element) => {
     displayComments(element);
   });
 };
 
-displayPopup();
+// displayPopup();
