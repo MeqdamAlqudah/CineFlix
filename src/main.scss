@@ -28,10 +28,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.comments-list{
-  overflow: scroll;
-}
-
 .comment {
     box-shadow: 8px 8px 0rem 1px rgb(0 ,0, 0) !important;
 
@@ -44,6 +40,7 @@ body {
 .insights {
   height: 23vh;
 }
+
 .btn-like {
   width: 32px;
   height: 32px;
@@ -61,7 +58,9 @@ body {
 }
 
 .comments-list{
+   overflow: scroll;
   li{
     margin-bottom: 19px;
   }
 }
+
