@@ -3,5 +3,14 @@
 
 * {
   list-style: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer {
+  border: 1px solid $primary-color;
+  width: auto;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
