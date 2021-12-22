@@ -6,14 +6,17 @@ import cards from './app/cards.js';
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
 
+const moviesCount = (movies) => {
+  moviesCounter.innerText = movies.length;
+};
+
 const renderMovies = () => {
   getData().then((movies) => {
-    movies.forEach((movie, index) => {
-      let movieCount = 0;
-      movieCount += index + 1;
+    moviesCount(movies);
+    movies.forEach((movie) => {
       movieList.innerHTML += cards(movie); // renders the cards
-      moviesCounter.innerText = movieCount; // displays the count of cards
     });
   });
 };
+
 renderMovies();
