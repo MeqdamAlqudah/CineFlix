@@ -1,9 +1,8 @@
 import './main.scss';
 import 'bootstrap';
 import getData from './app/api.js';
-import displayPopup from './app/popup';
+import displayPopup from './app/popup.js';
 import cards from './app/cards.js';
-
 
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
@@ -67,4 +66,3 @@ function display() {
 
 setTimeout(display, 2000);
 renderMovies();
-
