@@ -33,8 +33,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-5 text-light">
               <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" href="#"
-                  >Top 20 Movies</a
+                <a
+                  class="nav-link text-white position-relative"
+                  aria-current="page"
+                  href="#"
+                  >Top Movies<span
+                    class="
+                      position-absolute
+                      top-0
+                      start-100
+                      translate-middle
+                      badge
+                      rounded-pill
+                      bg-danger
+                    "
+                    id="movies-counter"
+                    ></span
+                  ></a
                 >
               </li>
               <li class="nav-item">
@@ -48,7 +63,7 @@
 
     <section>
       <div class="container-fluid">
-          <h3 class="h3 py-3 text-center">Section Top 20 Movies</h3>
+        <h3 class="h3 py-3 text-center">Section Top Movies</h3>
         <div
           class="row d-flex justify-content-center gap-5"
           id="movie-list"
