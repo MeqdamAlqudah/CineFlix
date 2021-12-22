@@ -19,6 +19,29 @@ body {
   justify-content: center;
 }
 
+.addcomment {
+  height: 15rem;
+}
+
+.insights {
+  background-image: url('./images/Capture.PNG');
+  background-repeat: no-repeat;
+  height: 23vh;
+}
+
+.comment {
+  box-shadow:
+    8px 8px 0 1px rgb(
+      0,
+      0,
+      0
+    ) !important;
+}
+
+.modal-content {
+  height: 76rem;
+}
+
 .btn-like {
   width: 32px;
   height: 32px;
@@ -33,4 +56,17 @@ body {
   &:hover {
     background-image: url(./images/like-filled.svg);
   }
+}
+
+.comments-list {
+  overflow: scroll;
+
+  li {
+    margin-bottom: 19px;
+  }
+}
+
+.modal {
+  background-color: #0000008a;
+  backdrop-filter: blur(3px);
 }
