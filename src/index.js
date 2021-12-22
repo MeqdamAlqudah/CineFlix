@@ -35,7 +35,7 @@ function display() {
     movies.forEach((movie, index) => {
       const commentButton = document.querySelectorAll('.btn.btn-dark')[index];
       const modal = document.querySelector('.modal-dialog');
-      commentButton.addEventListener('click', async () => {
+      commentButton.addEventListener('click', () => {
         modal.innerHTML += displayPopup(movie);
         document.querySelector('.modal').style.display = 'block';
         const close = document.querySelector('.btn-close');
