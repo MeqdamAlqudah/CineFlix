@@ -39,7 +39,7 @@ body {
 }
 
 .modal-content {
-  height: 200vh;
+  height: 76rem;
 }
 
 .btn-like {
@@ -64,4 +64,9 @@ body {
   li {
     margin-bottom: 19px;
   }
+}
+
+.modal{
+  background-color: #0000008a;
+  backdrop-filter: blur(3px);
 }
