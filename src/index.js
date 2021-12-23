@@ -67,6 +67,7 @@ function display() {
           li.textContent = `${el.creation_date}  ${el.username} : ${el.comment}`;
           ul.appendChild(li);
         };
+        const commentCounter = document.querySelector('h6 span.counter');
         comments.addEventListener('click', () => {
           const username = document.querySelector('.Name').value;
           const comment = document.querySelector('.insights').value;
@@ -81,6 +82,7 @@ function display() {
               username,
               comment,
             });
+            commentCounter.innerHTML = `${Number(commentCounter.textContent) + 1}`;
             const type = 'POST';
             const obj = { type, body };
             sendCommentsToApi(obj);
@@ -93,6 +95,9 @@ function display() {
         reciveCommentsApi(movie.id).then((element) => (element.json()))
           .then((json) => {
             const commentsArray = json;
+            commentCounter.textContent = commentsArray.length;
+            console.log(commentCounter);
+            console.log(commentsArray.length);
             commentsArray.forEach((element) => {
               displayComments(element);
             });
