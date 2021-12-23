@@ -18,24 +18,22 @@ const renderMovies = () => {
     moviesCount(movies);
     movies.forEach((movie) => {
       movieList.innerHTML += cards(movie);
-      console.log(movie); // renders the cards
+      // renders the cards
     });
   });
 };
 
 const reservationPopup = () => {
   getData().then((movies) => {
-    moviesCount(movies);
     movies.forEach((movie, index) => {
       const reserveBtn = document.querySelectorAll('.btn.btn-warning');
       reserveBtn[index].addEventListener('click', () => {
-        modalReserve.innerHTML += reservation(movie);
+        modalReserve.innerHTML = reservation(movie);
         const modal = document.querySelector('.modal');
         modal.style.display = 'block';
         const close = document.querySelector('.btn.btn-secondary');
         close.addEventListener('click', () => {
-          modalReserve.style.display = 'none';
-          window.location.reload();
+          modal.style.display = 'none';
         });
       });
     });

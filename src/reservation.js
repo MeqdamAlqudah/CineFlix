@@ -1,10 +1,11 @@
-const reservation = (movie) => `<div class="modal" tabindex="-1" role="dialog">
+const reservation = (movie) => `
+<div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       
       <div class="modal-body">
         <div>
-        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}">
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="img-reservation">
         </div>
         <div class="modal-header">
           <h5 class="modal-title">${movie.original_title}</h5>

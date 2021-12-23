@@ -15,4 +15,4 @@ const cards = (movie) => `<div class="card p-0" id="card" style="width: 18rem;">
     </div>
   </div> `;
 
-  export default cards;
+export default cards;
