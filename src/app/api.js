@@ -23,7 +23,6 @@ export const reciveCommentsApi = async (id) => {
     cache: 'default',
   });
   const data = await fetch(myRequest);
-  console.log(data);
   return data;
 };
 

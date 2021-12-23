@@ -1,5 +1,4 @@
 const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter) => {
-  console.log(movie);
   const comments = document.querySelector('.comment');
   const displayComments = (el) => {
     const ul = document.querySelector('.comments-list');
@@ -43,7 +42,6 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
   reciveCommentsApi(movie.id).then((element) => (element.json()))
     .then((json) => {
       const commentsArray = json;
-      console.log(json);
       commentsArray.forEach((element) => {
         displayComments(element);
       });
