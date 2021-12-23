@@ -28,7 +28,8 @@ const reservationPopup = () => {
   getData().then((movies) => {
     movies.forEach((movie, index) => {
       const reserveBtn = document.querySelectorAll('.btn.btn-warning');
-      reserveBtn[index].addEventListener('click', () => {
+      reserveBtn[index].addEventListener('click', (e) => {
+        e.preventDefault();
         modalReserve.innerHTML = reservation(movie);
         const modal = document.querySelector('.modal');
         modal.style.display = 'block';
