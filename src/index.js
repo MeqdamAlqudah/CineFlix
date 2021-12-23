@@ -17,7 +17,8 @@ const renderMovies = () => {
   getData().then((movies) => {
     moviesCount(movies);
     movies.forEach((movie) => {
-      movieList.innerHTML += cards(movie); // renders the cards
+      movieList.innerHTML += cards(movie);
+      console.log(movie); // renders the cards
     });
   });
 };
@@ -34,6 +35,7 @@ const reservationPopup = () => {
         const close = document.querySelector('.btn.btn-secondary');
         close.addEventListener('click', () => {
           modalReserve.style.display = 'none';
+          window.location.reload();
         });
       });
     });
