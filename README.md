@@ -20,7 +20,10 @@ Microverse project series: JavaScript Capstone Project features will be here.
 ## Live Demo
 
 You can check the link below for the live demo.
-N/A
+
+## Video description
+[N/A](https://www.loom.com/share/3956c4234e0043ef81fbaae9d4f3a300)
+
 
 
 ## Getting Started
@@ -56,7 +59,7 @@ Not required
 
 - GitHub: [https://github.com/MeqdamAlqudah]
 - Twitter: [https://twitter.com/MeqdamQudah]
-- LinkedIn: [https://www.linkedin.com/in/]
+- LinkedIn: [www.linkedin.com/in/meqdam-al-qudah-7514a21b5]
 
 ## Show your support
 
