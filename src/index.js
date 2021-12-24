@@ -37,6 +37,27 @@ const reservationPopup = () => {
         close.addEventListener('click', () => {
           modal.style.display = 'none';
         });
+        const reservationArray = JSON.parse(localStorage.getItem('reserveArray') || '[]');
+        const ulList = document.querySelector('.reservation-list');
+        const btnSubmit = document.querySelector('.btn.btn-primary');
+        const display = (reserveList) => {
+          ulList.innerHTML += `<li>${reserveList.startDate}/${reserveList.endDate} by ${reserveList.uname} </li>`;
+        };
+        btnSubmit.addEventListener('click', (e) => {
+          e.preventDefault();
+          const uname = document.querySelector('.name').value;
+          const startDate = document.querySelector('.start-date').value;
+          const endDate = document.querySelector('.end-date').value;
+          if (uname && startDate) {
+            const data = { uname, startDate, endDate };
+            reservationArray.push(data);
+            localStorage.setItem('reserveArray', JSON.stringify(reservationArray));
+            display(data);
+          }
+        });
+        reservationArray.forEach((data) => {
+          display(data);
+        });
       });
     });
   });
