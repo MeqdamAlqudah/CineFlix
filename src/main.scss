@@ -128,3 +128,21 @@ h5 {
   overflow: scroll;
   height: 100px;
 }
+
+.img-reservation {
+  width: 100%;
+  height: auto;
+}
+
+.modal-header {
+  padding: 0;
+  border: none;
+}
+
+.count-reservation {
+  text-align: center;
+}
+
+.btn-color {
+  background-color: $reservation-color;
+}
