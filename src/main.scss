@@ -27,19 +27,22 @@ body {
   background-image: url('./images/Capture.PNG');
   background-repeat: no-repeat;
   height: 23vh;
+  background-color: black;
+  background-size: 100px 37px;
 }
 
-.comment {
-  box-shadow:
-    8px 8px 0 1px rgb(
-      0,
-      0,
-      0
-    ) !important;
+.comments-list button.comment {
+  border: #4a3802;
+    border-style: solid;
+    color: #ffc107;
 }
 
 .modal-content {
   height: 81rem;
+  background-color: #000000ba;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('images/Movie.svg');
+  background-repeat: no-repeat;
+  background-position: 0vh 97vh;
 }
 
 .btn-like {
@@ -59,11 +62,12 @@ body {
 }
 
 .comments-list {
-  overflow: scroll;
   padding: 29px;
-
+  border: #ffc107;
+  border-style: solid;
   li {
     margin-bottom: 19px;
+    color: #f8f9fa;
   }
 }
 
@@ -71,4 +75,44 @@ body {
   background-color: #0000008a;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+}
+
+.recaptitle{
+  color: white;
+  font-size: 2rem;
+  margin: 6px;
+}
+
+h5 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.modal-title {
+  margin-bottom: 10px;
+}
+
+.recap {
+  color: #b1aeae;
+}
+
+.count {
+  color: white;
+  font-size: 2rem;
+}
+
+.container {
+  ul {
+    li {
+  color: white;
+  p {
+    color: #b1aeae;
+  }
+}
+  }
+}
+
+.Name {
+  background-color: black;
 }

@@ -4,7 +4,6 @@ import getData, { reciveCommentsApi, sendCommentsToApi } from './app/api.js';
 import displayPopup from './app/popup.js';
 import cards from './app/cards.js';
 import reservation from './reservation.js';
-
 import displayCommentData from './app/comment.js';
 import counter from './counter.js';
 
