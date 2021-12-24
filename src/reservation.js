@@ -1,5 +1,5 @@
 const reservation = (movie) => `
-<div class="modal" tabindex="-1" role="dialog">
+<div class="modal modal-reservation" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       
@@ -18,6 +18,7 @@ const reservation = (movie) => `
           </div>
       
           <div>
+            <h6 class="count-reservation">Reservations(0)</h6>
             <ul class="reservation-list overflow-auto"></ul>
           </div>
           <form>
@@ -33,8 +34,8 @@ const reservation = (movie) => `
           </form>
 </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary reservation-submit">Submit</button>
+        <button type="button" class="btn btn-secondary reservation-close" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
