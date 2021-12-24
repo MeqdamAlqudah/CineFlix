@@ -1,8 +1,11 @@
 import './main.scss';
 import 'bootstrap';
-import getData, { reciveCommentsApi, sendCommentsToApi } from './app/api.js';
+import {
+  getData, reciveCommentsApi, sendCommentsToApi, getInvolvement,
+} from './app/api.js';
 import displayPopup from './app/popup.js';
 import cards from './app/cards.js';
+import { displayLikes, addLike } from './app/utils.js';
 import reservation from './reservation.js';
 import displayCommentData from './app/comment.js';
 import counter from './counter.js';
@@ -18,12 +21,44 @@ const moviesCount = (movies) => {
 const renderMovies = () => {
   getData().then((movies) => {
     moviesCount(movies);
-    movies.forEach((movie) => {
-      movieList.innerHTML += cards(movie);
-      // renders the cards
+    movies.forEach((movie, index) => {
+      movieList.innerHTML += cards(movie, index); // render the cards
+    });
+    const spans = movieList.querySelectorAll('.spn-like');
+    getInvolvement('likes').then((data) => {
+      displayLikes(spans, data);
     });
   });
 };
+renderMovies();
+// Display Likes
+function addLikes() {
+  const parent = document.getElementById('movie-list');
+  const spans = parent.querySelectorAll('.spn-like');
+  getInvolvement('likes').then((data) => {
+    displayLikes(spans, data);
+  });
+}
+// Add Likes
+(function likeEvent() {
+  const selector = '.btn-like';
+  document.addEventListener('click', (e) => {
+    const element = e.target;
+    if (!element.matches(selector)) {
+      return 0;
+    }
+    const cardId = e.target.parentElement.id;
+    const like = { item_id: cardId };
+    addLike(like);
+    setTimeout(addLikes, 800);
+    e.target.style = 'visibility: hidden';
+    const loader = () => {
+      e.target.style = 'visibility: visible';
+    };
+    setTimeout(loader, 1000);
+    return 1;
+  });
+}());
 
 const reservationPopup = () => {
   getData().then((movies) => {
@@ -43,7 +78,6 @@ const reservationPopup = () => {
   });
 };
 setTimeout(reservationPopup, 2000);
-renderMovies();
 
 function display() {
   getData().then((movies) => {
@@ -65,4 +99,3 @@ function display() {
 }
 
 setTimeout(display, 2000);
-renderMovies();
