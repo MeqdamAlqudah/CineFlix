@@ -62,18 +62,18 @@ function addLikes() {
 const reservationPopup = () => {
   getData().then((movies) => {
     movies.forEach((movie, index) => {
-      const reserveBtn = document.querySelectorAll('.btn.btn-warning');
+      const reserveBtn = document.querySelectorAll('.reservation-btn');
       reserveBtn[index].addEventListener('click', (e) => {
         e.preventDefault();
         modalReserve.innerHTML = reservation(movie);
-        const modal = document.querySelector('.modal');
+        const modal = document.querySelector('.modal-reservation');
         modal.style.display = 'block';
-        const close = document.querySelector('.btn.btn-secondary');
+        const close = document.querySelector('.reservation-close');
         close.addEventListener('click', () => {
           modal.style.display = 'none';
         });
         const ulList = document.querySelector('.reservation-list');
-        const btnSubmit = document.querySelector('.btn.btn-primary');
+        const btnSubmit = document.querySelector('.reservation-submit');
         const displayReservation = (list) => {
           list.forEach((item) => {
             ulList.innerHTML += `<li>${item.date_start} - ${item.date_end} by ${item.username} </li>`;

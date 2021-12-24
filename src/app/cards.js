@@ -10,7 +10,7 @@ const cards = (movie, index) => `<div class="card p-0" id="card" style="width: 1
     </div>  
     <div class="h-50 d-flex flex-column gap-2">
       <a href="#" class="btn btn-dark">Comments</a>
-      <a href="#" class="btn btn-warning">Reservations</a>
+      <a href="#" class="btn btn-warning reservation-btn">Reservations</a>
     </div>  
     </div>
   </div> `;
