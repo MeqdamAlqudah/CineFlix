@@ -39,7 +39,7 @@ body {
 }
 
 .modal-content {
-  height: 76rem;
+  height: 81rem;
 }
 
 .btn-like {
@@ -60,6 +60,7 @@ body {
 
 .comments-list {
   overflow: scroll;
+  padding: 29px;
 
   li {
     margin-bottom: 19px;
