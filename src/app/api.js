@@ -29,18 +29,18 @@ export const reciveCommentsApi = async (id) => {
 const apiKey = 'api_key=00d82371d477e875486a05abe6476c67';
 const apiUrl = `https://api.themoviedb.org/3/movie/popular?${apiKey}`;
 
-export async function getData() {
+export const getData = async () => {
   const response = await fetch(apiUrl);
   const data = await response.json();
   const res = await data.results;
   return res;
-}
+};
 
 // Involvement API Likes Call
 const appKey = 'rEViJgSZrOmcE6w0blo4';
 const involvementApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appKey}/`;
-export async function getInvolvement(extension) {
+export const getInvolvement = async (extension) => {
   const response = await fetch(`${involvementApiUrl}${extension}`);
   const result = await response.json();
   return result;
-}
+};

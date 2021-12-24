@@ -37,8 +37,8 @@ body {
   color: #ffc107;
 }
 
-.modal-content {
-  height: 81rem;
+.modal-content-comments {
+  height: 90rem;
   background-color: #000000ba;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('images/Movie.svg');
   background-repeat: no-repeat;
@@ -72,7 +72,7 @@ body {
   }
 }
 
-.modal {
+.modal-comments {
   background-color: #0000008a;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -103,7 +103,7 @@ h5 {
   font-size: 2rem;
 }
 
-.container {
+.container-comments {
   ul {
     li {
       color: white;
@@ -117,4 +117,9 @@ h5 {
 
 .Name {
   background-color: black;
+}
+
+#error {
+  color: red;
+  font-size: 14px;
 }

@@ -1,4 +1,4 @@
-const displayPopup = (element) => ` <div class="modal-content w-100 align-items-center border border-dark border-3">
+const displayPopup = (element) => ` <div class="modal-content modal-content-comments w-100 align-items-center border border-dark border-3">
 <div class="modal-header w-75 border-0">
   <button type="button" class="btn-close btn-close-white float-end" onclick = "close()"
   data-bs-dismiss="modal" aria-label="Close"></button>
@@ -9,7 +9,7 @@ const displayPopup = (element) => ` <div class="modal-content w-100 align-items-
 <img src="https://image.tmdb.org/t/p/w500${element.poster_path}" class="w-50"></div>
   <p class = "recaptitle">Movie Recap</p>
   <p class="recap">${element.overview}</p>
- <div class="container">
+ <div class="container container-comments">
      <ul class="row">
     <li id="popularity" class="col d-flex">Popularity: <p class="ms-2">${element.popularity}</p> </li>
     <li id="language" class="col d-flex"> Language: <p class="ms-2">${element.original_language}</p> </li>
@@ -22,6 +22,7 @@ const displayPopup = (element) => ` <div class="modal-content w-100 align-items-
  </div>
 </div>
 <h6 class = "count">Comments <span class ="counter">0<span></h6>
+<p id = "error"></p>
 <ul class="comments-list overflow-auto">
 
 </ul>
