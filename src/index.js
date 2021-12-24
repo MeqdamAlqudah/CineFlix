@@ -4,7 +4,7 @@ import getData from './app/api.js';
 import displayPopup from './app/popup.js';
 import cards from './app/cards.js';
 import reservation from './reservation.js';
-// import reservation from './reservation.js';
+import { postReservation, getReservation } from './involvementApi.js';
 
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
@@ -20,6 +20,7 @@ const renderMovies = () => {
     movies.forEach((movie) => {
       movieList.innerHTML += cards(movie);
       // renders the cards
+      // console.log(movie);
     });
   });
 };
@@ -37,28 +38,25 @@ const reservationPopup = () => {
         close.addEventListener('click', () => {
           modal.style.display = 'none';
         });
-        const reservationArray = JSON.parse(localStorage.getItem('reserveArray') || '[]');
+        // const reservationArray = JSON.parse(localStorage.getItem('reserveArray') || '[]');
         const ulList = document.querySelector('.reservation-list');
         const btnSubmit = document.querySelector('.btn.btn-primary');
         const display = (reserveList) => {
-          ulList.innerHTML += `<li>${reserveList.startDate}/${reserveList.endDate} by ${reserveList.uname} </li>`;
+          ulList.innerHTML += `<li>${reserveList.date_start.split('-').reverse().join('/')} - ${reserveList.date_end.split('-').reverse().join('/')} by ${reserveList.username} </li>`;
         };
         btnSubmit.addEventListener('click', (e) => {
           e.preventDefault();
-          const uname = document.querySelector('.name').value;
-          const startDate = document.querySelector('.start-date').value;
-          const endDate = document.querySelector('.end-date').value;
-          if (uname && startDate) {
-            const data = { uname, startDate, endDate };
-            reservationArray.push(data);
-            localStorage.setItem('reserveArray', JSON.stringify(reservationArray));
-            display(data);
+          const username = document.querySelector('.name').value;
+          const date_start = document.querySelector('.start-date').value;
+          const date_end = document.querySelector('.end-date').value;
+          if (username && date_start) {
+            const item_id = movie.id;
+            const data = {item_id, username, date_start, date_end };
           }
-        });
-        reservationArray.forEach((data) => {
-          display(data);
-        });
+            postReservation(data);
+         });
       });
+      
     });
   });
 };
