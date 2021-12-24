@@ -27,7 +27,6 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
         const commentCounter = document.querySelector('body h6.count');
         const commentsArray = json;
         commentCounter.innerHTML = `Comments <span class ="counter">${commentsArray.length + 1}<span>`;
-        expect(Number(document.querySelector('h6 span.counter').textContent)).toBe(2);
       });
       displayComments(el);
       document.querySelector('.Name').value = '';

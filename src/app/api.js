@@ -2,7 +2,7 @@
 export const sendCommentsToApi = ({
   type, body,
 }) => {
-  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OXo5yjOzhiKMHZxhZ4kt/comments';
+  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rEViJgSZrOmcE6w0blo4/comments';
   fetch(url, {
     method: type,
     body,
@@ -13,7 +13,7 @@ export const sendCommentsToApi = ({
 };
 
 export const reciveCommentsApi = async (id) => {
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/OXo5yjOzhiKMHZxhZ4kt/comments?item_id=${id}`;
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rEViJgSZrOmcE6w0blo4/comments?item_id=${id}`;
   const myRequest = new Request(url, {
     method: 'GET',
     headers: {
