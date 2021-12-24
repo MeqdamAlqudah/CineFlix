@@ -1,30 +1,64 @@
 /* eslint-disable camelcase */
 import './main.scss';
 import 'bootstrap';
-import getData from './app/api.js';
+import {
+  getData, reciveCommentsApi, sendCommentsToApi, getInvolvement,
+} from './app/api.js';
 import displayPopup from './app/popup.js';
 import cards from './app/cards.js';
+import { displayLikes, addLike } from './app/utils.js';
 import reservation from './reservation.js';
 import { postReservation, getReservation } from './involvementApi.js';
+import displayCommentData from './app/comment.js';
+import counter from './counter.js';
+import moviesCount from './app/Itemscounter.js';
+
 
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
-// const reserveBtn = document.querySelectorAll('.btn');
 const modalReserve = document.getElementById('modal-reservation');
 
-const moviesCount = (movies) => {
-  moviesCounter.innerText = movies.length;
-};
 const renderMovies = () => {
   getData().then((movies) => {
-    moviesCount(movies);
-    movies.forEach((movie) => {
-      movieList.innerHTML += cards(movie);
-      // renders the cards
-      // console.log(movie);
+    moviesCount(movies, moviesCounter);
+    movies.forEach((movie, index) => {
+      movieList.innerHTML += cards(movie, index); // render the cards
+    });
+    const spans = movieList.querySelectorAll('.spn-like');
+    getInvolvement('likes').then((data) => {
+      displayLikes(spans, data);
     });
   });
 };
+renderMovies();
+// Display Likes
+function addLikes() {
+  const parent = document.getElementById('movie-list');
+  const spans = parent.querySelectorAll('.spn-like');
+  getInvolvement('likes').then((data) => {
+    displayLikes(spans, data);
+  });
+}
+// Add Likes
+(function likeEvent() {
+  const selector = '.btn-like';
+  document.addEventListener('click', (e) => {
+    const element = e.target;
+    if (!element.matches(selector)) {
+      return 0;
+    }
+    const cardId = e.target.parentElement.id;
+    const like = { item_id: cardId };
+    addLike(like);
+    setTimeout(addLikes, 800);
+    e.target.style = 'visibility: hidden';
+    const loader = () => {
+      e.target.style = 'visibility: visible';
+    };
+    setTimeout(loader, 1000);
+    return 1;
+  });
+}());
 
 const reservationPopup = () => {
   getData().then((movies) => {
@@ -69,9 +103,7 @@ const reservationPopup = () => {
     });
   });
 };
-
 setTimeout(reservationPopup, 2000);
-renderMovies();
 
 function display() {
   getData().then((movies) => {
@@ -82,38 +114,14 @@ function display() {
         modal.innerHTML += displayPopup(movie);
         document.querySelector('.modal').style.display = 'block';
         const close = document.querySelector('.btn-close');
-        const comment = document.querySelector('.comment');
         close.addEventListener('click', () => {
           document.querySelector('.modal').style.display = 'none';
           modal.innerHTML = '';
         });
-        const commentsArray = JSON.parse(localStorage.getItem('commentsArray') || '[]');
-        const displayComments = (el) => {
-          const ul = document.querySelector('.comments-list');
-          const li = document.createElement('li');
-
-          li.textContent = `${el.date} ${el.name} ${el.insight}`;
-          ul.appendChild(li);
-        };
-        comment.addEventListener('click', () => {
-          const name = document.querySelector('.Name').value;
-          const insight = document.querySelector('.insights').value;
-          const d = new Date();
-          const date = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
-          if (name && insight) {
-            const el = { date, name, insight };
-            commentsArray.push(el);
-            localStorage.setItem('commentsArray', JSON.stringify(commentsArray));
-            displayComments(el);
-          }
-        });
-        commentsArray.forEach((element) => {
-          displayComments(element);
-        });
+        displayCommentData(movie, reciveCommentsApi, sendCommentsToApi, counter);
       });
     });
   });
 }
 
 setTimeout(display, 2000);
-renderMovies();

@@ -43,7 +43,7 @@
     "hint": "^6.1.9",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.4.3",
+    "jest": "^27.4.5",
     "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^2.4.5",
     "node-sass": "^6.0.1",

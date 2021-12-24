@@ -2,7 +2,7 @@
     "connector": {
       "name": "local",
       "options": {
-        "pattern": ["**", "!.git/**", "!node_modules/**"]
+        "pattern": ["*!coverage*", "!.git/**", "!node_modules/**"]
       }
     },
     "extends": ["development"],
@@ -14,5 +14,5 @@
       "meta-charset-utf-8",
       "meta-viewport",
       "no-inline-styles:error"
-    ]
+    ],
   }

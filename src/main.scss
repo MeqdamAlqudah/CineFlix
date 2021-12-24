@@ -39,7 +39,7 @@ body {
 }
 
 .modal-content {
-  height: 76rem;
+  height: 81rem;
 }
 
 .btn-like {
@@ -60,6 +60,7 @@ body {
 
 .comments-list {
   overflow: scroll;
+  padding: 29px;
 
   li {
     margin-bottom: 19px;
@@ -69,6 +70,7 @@ body {
 .modal {
   background-color: #0000008a;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 
 .reservation-list {

@@ -21,7 +21,7 @@ const displayPopup = (element) => ` <div class="modal-content w-100 align-items-
 </ul>
  </div>
 </div>
-<h6>Comments (2)</h6>
+<h6 class = "count">Comments <span class ="counter">0<span></h6>
 <ul class="comments-list">
 
 </ul>
