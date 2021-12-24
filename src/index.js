@@ -10,18 +10,16 @@ import reservation from './reservation.js';
 
 import displayCommentData from './app/comment.js';
 import counter from './counter.js';
+import moviesCount from './app/Itemscounter.js';
 
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
 // const reserveBtn = document.querySelectorAll('.btn');
 const modalReserve = document.getElementById('modal-reservation');
 
-const moviesCount = (movies) => {
-  moviesCounter.innerText = movies.length;
-};
 const renderMovies = () => {
   getData().then((movies) => {
-    moviesCount(movies);
+    moviesCount(movies, moviesCounter);
     movies.forEach((movie, index) => {
       movieList.innerHTML += cards(movie, index); // render the cards
     });
