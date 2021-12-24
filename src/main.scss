@@ -33,8 +33,8 @@ body {
 
 .comments-list button.comment {
   border: #4a3802;
-    border-style: solid;
-    color: #ffc107;
+  border-style: solid;
+  color: #ffc107;
 }
 
 .modal-content {
@@ -42,7 +42,7 @@ body {
   background-color: #000000ba;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('images/Movie.svg');
   background-repeat: no-repeat;
-  background-position: 0vh 97vh;
+  background-position: 0 97vh;
 }
 
 .btn-like {
@@ -65,6 +65,7 @@ body {
   padding: 29px;
   border: #ffc107;
   border-style: solid;
+
   li {
     margin-bottom: 19px;
     color: #f8f9fa;
@@ -77,7 +78,7 @@ body {
   -webkit-backdrop-filter: blur(3px);
 }
 
-.recaptitle{
+.recaptitle {
   color: white;
   font-size: 2rem;
   margin: 6px;
@@ -105,11 +106,12 @@ h5 {
 .container {
   ul {
     li {
-  color: white;
-  p {
-    color: #b1aeae;
-  }
-}
+      color: white;
+
+      p {
+        color: #b1aeae;
+      }
+    }
   }
 }
 
