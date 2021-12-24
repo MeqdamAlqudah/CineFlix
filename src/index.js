@@ -12,6 +12,7 @@ import { postReservation, getReservation } from './involvementApi.js';
 import displayCommentData from './app/comment.js';
 import counter from './counter.js';
 import moviesCount from './app/Itemscounter.js';
+import reservationCount from './reservationCounter.js';
 
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
@@ -62,18 +63,18 @@ function addLikes() {
 const reservationPopup = () => {
   getData().then((movies) => {
     movies.forEach((movie, index) => {
-      const reserveBtn = document.querySelectorAll('.btn.btn-warning');
+      const reserveBtn = document.querySelectorAll('.reservation-btn');
       reserveBtn[index].addEventListener('click', (e) => {
         e.preventDefault();
         modalReserve.innerHTML = reservation(movie);
-        const modal = document.querySelector('.modal');
+        const modal = document.querySelector('.modal-reservation');
         modal.style.display = 'block';
-        const close = document.querySelector('.btn.btn-secondary');
+        const close = document.querySelector('.reservation-close');
         close.addEventListener('click', () => {
           modal.style.display = 'none';
         });
         const ulList = document.querySelector('.reservation-list');
-        const btnSubmit = document.querySelector('.btn.btn-primary');
+        const btnSubmit = document.querySelector('.reservation-submit');
         const displayReservation = (list) => {
           list.forEach((item) => {
             ulList.innerHTML += `<li>${item.date_start} - ${item.date_end} by ${item.username} </li>`;
@@ -81,7 +82,9 @@ const reservationPopup = () => {
         };
         const item_id = movie.id;
         getReservation(item_id).then((data) => {
+          const reservationCnt = document.querySelector('.count-reservation');
           displayReservation(data);
+          reservationCnt.innerHTML = `Reservations(${reservationCount(data)})`;
         });
         btnSubmit.addEventListener('click', async (e) => {
           e.preventDefault();
@@ -94,7 +97,12 @@ const reservationPopup = () => {
             };
             await postReservation(data);
             await getReservation(item_id).then((data) => {
+              const reservationCnt = document.querySelector('.count-reservation');
+              ulList.innerHTML = '';
               displayReservation(data);
+              reservationCnt.innerHTML = '';
+
+              reservationCnt.innerHTML = `Reservations(${reservationCount(data)})`;
             });
           }
         });
