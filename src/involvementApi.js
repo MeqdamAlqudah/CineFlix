@@ -14,10 +14,10 @@ const postReservation = async (data) => {
 const getReservation = async (id) => {
   const response = await fetch(`${getUrl}${id}`);
   const data = await response.json();
-//   console.log(data);
   if (response) {
     return data;
   }
+  return 0;
 };
 
 export { postReservation, getReservation };
