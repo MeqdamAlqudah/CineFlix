@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import './main.scss';
 import 'bootstrap';
 import {
@@ -7,14 +8,13 @@ import displayPopup from './app/popup.js';
 import cards from './app/cards.js';
 import { displayLikes, addLike } from './app/utils.js';
 import reservation from './reservation.js';
-
+import { postReservation, getReservation } from './involvementApi.js';
 import displayCommentData from './app/comment.js';
 import counter from './counter.js';
 import moviesCount from './app/Itemscounter.js';
 
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
-// const reserveBtn = document.querySelectorAll('.btn');
 const modalReserve = document.getElementById('modal-reservation');
 
 const renderMovies = () => {
@@ -72,6 +72,32 @@ const reservationPopup = () => {
         close.addEventListener('click', () => {
           modal.style.display = 'none';
         });
+        const ulList = document.querySelector('.reservation-list');
+        const btnSubmit = document.querySelector('.btn.btn-primary');
+        const displayReservation = (list) => {
+          list.forEach((item) => {
+            ulList.innerHTML += `<li>${item.date_start} - ${item.date_end} by ${item.username} </li>`;
+          });
+        };
+        const item_id = movie.id;
+        getReservation(item_id).then((data) => {
+          displayReservation(data);
+        });
+        btnSubmit.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const username = document.querySelector('.name').value;
+          const date_start = document.querySelector('.start-date').value;
+          const date_end = document.querySelector('.end-date').value;
+          if (username && date_start) {
+            const data = {
+              item_id, username, date_start, date_end,
+            };
+            await postReservation(data);
+            await getReservation(item_id).then((data) => {
+              displayReservation(data);
+            });
+          }
+        });
       });
     });
   });
@@ -85,10 +111,10 @@ function display() {
       const modal = document.querySelector('.modal-dialog');
       commentButton.addEventListener('click', () => {
         modal.innerHTML += displayPopup(movie);
-        document.querySelector('.modal').style.display = 'block';
+        document.querySelector('.modal-comments').style.display = 'block';
         const close = document.querySelector('.btn-close');
         close.addEventListener('click', () => {
-          document.querySelector('.modal').style.display = 'none';
+          document.querySelector('.modal-comments').style.display = 'none';
           modal.innerHTML = '';
         });
         displayCommentData(movie, reciveCommentsApi, sendCommentsToApi, counter);
