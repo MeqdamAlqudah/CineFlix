@@ -12,6 +12,7 @@ import { postReservation, getReservation } from './involvementApi.js';
 import displayCommentData from './app/comment.js';
 import counter from './counter.js';
 import moviesCount from './app/Itemscounter.js';
+import reservationCount from './reservationCounter.js';
 
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
@@ -81,7 +82,9 @@ const reservationPopup = () => {
         };
         const item_id = movie.id;
         getReservation(item_id).then((data) => {
+          const reservationCnt = document.querySelector('.count-reservation');
           displayReservation(data);
+          reservationCnt.innerHTML = `Reservations(${reservationCount(data)})`;
         });
         btnSubmit.addEventListener('click', async (e) => {
           e.preventDefault();
@@ -94,7 +97,12 @@ const reservationPopup = () => {
             };
             await postReservation(data);
             await getReservation(item_id).then((data) => {
+              const reservationCnt = document.querySelector('.count-reservation');
+              ulList.innerHTML = '';
               displayReservation(data);
+              reservationCnt.innerHTML = '';
+
+              reservationCnt.innerHTML = `Reservations(${reservationCount(data)})`;
             });
           }
         });

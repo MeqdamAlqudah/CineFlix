@@ -18,6 +18,7 @@ const reservation = (movie) => `
           </div>
       
           <div>
+            <h6 class="count-reservation">Reservations(0)</h6>
             <ul class="reservation-list overflow-auto"></ul>
           </div>
           <form>
