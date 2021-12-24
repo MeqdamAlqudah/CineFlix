@@ -3,6 +3,8 @@ import 'bootstrap';
 import getData, { reciveCommentsApi, sendCommentsToApi } from './app/api.js';
 import displayPopup from './app/popup.js';
 import cards from './app/cards.js';
+import reservation from './reservation.js';
+// import reservation from './reservation.js';
 
 import displayCommentData from './app/comment.js';
 import counter from './counter.js';
@@ -23,6 +25,7 @@ const renderMovies = () => {
     movies.forEach((movie) => {
       movieList.innerHTML += cards(movie);
       // renders the cards
+
     });
   });
 };
@@ -44,6 +47,26 @@ const reservationPopup = () => {
     });
   });
 };
+
+
+const reservationPopup = () => {
+  getData().then((movies) => {
+    movies.forEach((movie, index) => {
+      const reserveBtn = document.querySelectorAll('.btn.btn-warning');
+      reserveBtn[index].addEventListener('click', (e) => {
+        e.preventDefault();
+        modalReserve.innerHTML = reservation(movie);
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'block';
+        const close = document.querySelector('.btn.btn-secondary');
+        close.addEventListener('click', () => {
+          modal.style.display = 'none';
+        });
+      });
+    });
+  });
+};
+
 
 setTimeout(reservationPopup, 2000);
 renderMovies();
