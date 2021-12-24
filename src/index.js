@@ -13,7 +13,6 @@ import displayCommentData from './app/comment.js';
 import counter from './counter.js';
 import moviesCount from './app/Itemscounter.js';
 
-
 const movieList = document.getElementById('movie-list');
 const moviesCounter = document.getElementById('movies-counter');
 const modalReserve = document.getElementById('modal-reservation');
