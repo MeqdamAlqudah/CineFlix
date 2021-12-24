@@ -8,16 +8,16 @@ const postReservation = async (data) => {
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify(data),
   });
-// console.log(response);
   return response;
 };
 
 const getReservation = async (id) => {
- 
   const response = await fetch(`${getUrl}${id}`);
   const data = await response.json();
 //   console.log(data);
-  return data;
+  if (response) {
+    return data;
+  }
 };
 
 export { postReservation, getReservation };

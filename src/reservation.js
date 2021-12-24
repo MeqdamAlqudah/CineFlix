@@ -18,17 +18,17 @@ const reservation = (movie) => `
           </div>
       
           <div>
-            <ul class="reservation-list"></ul>
+            <ul class="reservation-list overflow-auto"></ul>
           </div>
           <form>
             <div class="form-group">
-            <input type="text" class="form-gorup name" placeholder="Your Name">
+            <input type="text" class="form-group name" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input type="date" class="start-date" placeholder="Start Date">
+              <input type="date" class="form-group start-date" placeholder="Start Date">
             </div>
             <div class="form-group">
-              <input type="date" class="end-date" placeholder="End Date">
+              <input type="date" class="form-group end-date" placeholder="End Date">
             </div>
           </form>
 </div>

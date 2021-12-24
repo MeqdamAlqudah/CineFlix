@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import './main.scss';
 import 'bootstrap';
 import getData from './app/api.js';
@@ -38,25 +39,33 @@ const reservationPopup = () => {
         close.addEventListener('click', () => {
           modal.style.display = 'none';
         });
-        // const reservationArray = JSON.parse(localStorage.getItem('reserveArray') || '[]');
         const ulList = document.querySelector('.reservation-list');
         const btnSubmit = document.querySelector('.btn.btn-primary');
-        const display = (reserveList) => {
-          ulList.innerHTML += `<li>${reserveList.date_start.split('-').reverse().join('/')} - ${reserveList.date_end.split('-').reverse().join('/')} by ${reserveList.username} </li>`;
+        const displayReservation = (list) => {
+          list.forEach((item) => {
+            ulList.innerHTML += `<li>${item.date_start} - ${item.date_end} by ${item.username} </li>`;
+          });
         };
-        btnSubmit.addEventListener('click', (e) => {
+        const item_id = movie.id;
+        getReservation(item_id).then((data) => {
+          displayReservation(data);
+        });
+        btnSubmit.addEventListener('click', async (e) => {
           e.preventDefault();
           const username = document.querySelector('.name').value;
           const date_start = document.querySelector('.start-date').value;
           const date_end = document.querySelector('.end-date').value;
           if (username && date_start) {
-            const item_id = movie.id;
-            const data = {item_id, username, date_start, date_end };
+            const data = {
+              item_id, username, date_start, date_end,
+            };
+            await postReservation(data);
+            await getReservation(item_id).then((data) => {
+              displayReservation(data);
+            });
           }
-            postReservation(data);
-         });
+        });
       });
-      
     });
   });
 };
