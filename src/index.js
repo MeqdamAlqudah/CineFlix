@@ -111,10 +111,10 @@ function display() {
       const modal = document.querySelector('.modal-dialog');
       commentButton.addEventListener('click', () => {
         modal.innerHTML += displayPopup(movie);
-        document.querySelector('.modal').style.display = 'block';
+        document.querySelector('.modal-comments').style.display = 'block';
         const close = document.querySelector('.btn-close');
         close.addEventListener('click', () => {
-          document.querySelector('.modal').style.display = 'none';
+          document.querySelector('.modal-comments').style.display = 'none';
           modal.innerHTML = '';
         });
         displayCommentData(movie, reciveCommentsApi, sendCommentsToApi, counter);
