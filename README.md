@@ -1,6 +1,8 @@
-# JavaScript Capstone Project
+# CineFlix Project
 
-> Project description will be here.
+> Website that represents the latest update on top movie API 
+> with the ability to comment and make reservations on each one of
+> the top movies
 
 
 
@@ -67,8 +69,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Design Ideas will be here
-
+- API that we used : https://developers.themoviedb.org/3/getting-started/introduction
 
 ## 📝 License
 This project is [MIT](./MIT.md) licensed.

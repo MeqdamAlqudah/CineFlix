@@ -24,7 +24,7 @@ body {
 }
 
 .insights {
-  background-image: url('./images/Capture.PNG');
+  background-image: url(./images/Capture.PNG);
   background-repeat: no-repeat;
   height: 23vh;
   background-color: black;
@@ -40,7 +40,7 @@ body {
 .modal-content-comments {
   height: 90rem;
   background-color: #000000ba;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000), url('images/Movie.svg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000), url(./images/Movie.svg);
   background-repeat: no-repeat;
   background-position: 0 97vh;
 }
