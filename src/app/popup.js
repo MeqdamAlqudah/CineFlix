@@ -1,6 +1,6 @@
 const displayPopup = (element) => ` <div class="modal-content modal-content-comments w-100 align-items-center border border-dark border-3">
 <div class="modal-header w-75 border-0">
-  <button type="button" class="btn-close btn-close-white float-end" onclick = "close()"
+  <button type="button" class="btn-close btn-close-white float-end mt-2" onclick = "close()"
   data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 <div class="modal-body">
