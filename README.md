@@ -7,8 +7,14 @@
 
 
 Additional description of the project and its features.
-Microverse project series: JavaScript Capstone Project features will be here.
+Microverse project series: CineFlix Project features will be here.
 
+# Home page
+![screenshot 1](./Capture2.PNG)
+# Popup 
+![screenshot 2](./Capture3.PNG)
+# Reservation 
+![screenshot 3](./Capture4.PNG)
 ## Built With
 
 - HTML5 
@@ -22,6 +28,7 @@ Microverse project series: JavaScript Capstone Project features will be here.
 ## Live Demo
 
 You can check the link below for the live demo.
+https://meqdamalqudah.github.io/CineFlix/#
 
 ## Video description
 [N/A](https://www.loom.com/share/3956c4234e0043ef81fbaae9d4f3a300)
@@ -39,7 +46,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 
-Not required
+you just have to select the green button code from github page then download zip files
+and you will have our code source then you have to run npm start using cmd
+or you can just check our live demo
 
 
 
