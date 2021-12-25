@@ -1,12 +1,20 @@
-# JavaScript Capstone Project
+# CineFlix Project
 
-> Project description will be here.
+> Website that represents the latest update on top movie API 
+> with the ability to comment and make reservations on each one of
+> the top movies
 
 
 
 Additional description of the project and its features.
-Microverse project series: JavaScript Capstone Project features will be here.
+Microverse project series: CineFlix Project features will be here.
 
+# Home page
+![screenshot 1](./Capture2.PNG)
+# Popup 
+![screenshot 2](./Capture3.PNG)
+# Reservation 
+![screenshot 3](./Capture4.PNG)
 ## Built With
 
 - HTML5 
@@ -20,7 +28,11 @@ Microverse project series: JavaScript Capstone Project features will be here.
 ## Live Demo
 
 You can check the link below for the live demo.
-N/A
+https://meqdamalqudah.github.io/CineFlix/#
+
+## Video description
+[N/A](https://www.loom.com/share/3956c4234e0043ef81fbaae9d4f3a300)
+
 
 
 ## Getting Started
@@ -34,7 +46,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 
-Not required
+you just have to select the green button code from github page then download zip files
+and you will have our code source then you have to run npm start using cmd
+or you can just check our live demo
 
 
 
@@ -56,7 +70,7 @@ Not required
 
 - GitHub: [https://github.com/MeqdamAlqudah]
 - Twitter: [https://twitter.com/MeqdamQudah]
-- LinkedIn: [https://www.linkedin.com/in/]
+- LinkedIn: [www.linkedin.com/in/meqdam-al-qudah-7514a21b5]
 
 ## Show your support
 
@@ -64,8 +78,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Design Ideas will be here
-
+- API that we used : https://developers.themoviedb.org/3/getting-started/introduction
 
 ## 📝 License
 This project is [MIT](./MIT.md) licensed.
