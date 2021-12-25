@@ -102,6 +102,7 @@ const reservationPopup = () => {
           const date_start = document.querySelector('.start-date').value;
           const date_end = document.querySelector('.end-date').value;
           const errorElement = document.querySelector('.error-reservation');
+
           if (!(username && date_start && date_end)) {
             e.preventDefault();
             errorElement.innerText = 'Please enter your name and your reservation date ';
@@ -111,6 +112,9 @@ const reservationPopup = () => {
           } else if (findDate(date_start, date_end)) {
             e.preventDefault();
             errorElement.innerText = 'this date is reserve';
+          } else if ((new Date(date_start).getTime() > new Date(date_end).getTime())) {
+            e.preventDefault();
+            errorElement.innerText = 'End date can\'t be before the start date';
           } else {
             errorElement.innerText = '';
             const data = {
