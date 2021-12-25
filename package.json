@@ -1,7 +1,7 @@
 {
   "name": "javascript_capstone",
   "version": "1.0.0",
-  "description": "> CineFlix movies project ",
+  "description": "> CineFlix movies project",
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist",
