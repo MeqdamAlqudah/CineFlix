@@ -1,7 +1,7 @@
 {
   "name": "javascript_capstone",
   "version": "1.0.0",
-  "description": "> Project description will be here.",
+  "description": "> CineFlix movies project",
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MeqdamAlqudah/JavaScript-Capstone.git"
+    "url": "git+https://github.com/MeqdamAlqudah/CineFlix.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MeqdamAlqudah/JavaScript-Capstone/issues"
+    "url": "https://github.com/MeqdamAlqudah/CineFlix/issues"
   },
-  "homepage": "https://github.com/MeqdamAlqudah/JavaScript-Capstone#readme",
+  "homepage": "https://github.com/MeqdamAlqudah/CineFlix#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.0",
     "bootstrap": "^5.1.3",
