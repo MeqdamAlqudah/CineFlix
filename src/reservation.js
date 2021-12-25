@@ -23,6 +23,7 @@ const reservation = (movie) => `
           </div>
           <form>
             <div class="form-group">
+            <p class ="error-reservation"></p>
             <input type="text" class="form-group name mb-3" placeholder="Your Name">
             </div>
             <div class="form-group">

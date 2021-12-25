@@ -3,7 +3,9 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
   const displayComments = (el) => {
     const ul = document.querySelector('.comments-list');
     const li = document.createElement('li');
-    li.textContent = `${el.creation_date}  ${el.username} : ${el.comment}`;
+    const dateObj = new Date();
+    const date = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+    li.textContent = `${date}  ${el.username} : ${el.comment}`;
     ul.appendChild(li);
   };
   comments.addEventListener('click', (e) => {

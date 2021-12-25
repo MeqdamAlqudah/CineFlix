@@ -119,7 +119,8 @@ h5 {
   background-color: black;
 }
 
-#error {
+#error,
+.error-reservation {
   color: red;
   font-size: 14px;
 }
@@ -127,6 +128,12 @@ h5 {
 .reservation-list {
   overflow: scroll;
   height: 100px;
+  li{
+    display: flex;
+    p{
+      margin-right: 3px;
+    }
+  }
 }
 
 .img-reservation {

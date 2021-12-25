@@ -77,8 +77,19 @@ const reservationPopup = () => {
         const btnSubmit = document.querySelector('.reservation-submit');
         const displayReservation = (list) => {
           list.forEach((item) => {
-            ulList.innerHTML += `<li>${item.date_start} - ${item.date_end} by ${item.username} </li>`;
+            ulList.innerHTML += `<li><p class = "date-start">${item.date_start}</p>   -    <p class = "date-end">${item.date_end}</p>    by   ${item.username} </li>`;
           });
+        };
+        const findDate = (dateStart, dateEnd) => {
+          const oldDataStart = document.querySelectorAll('.date-start');
+          const oldData_end = document.querySelectorAll('.date-end');
+          for (let i = 0; i < oldDataStart.length; i += 1) {
+            if ((oldDataStart[i].textContent === dateStart)
+              && (oldData_end[i].textContent === dateEnd)) {
+              return true;
+            }
+          }
+          return false;
         };
         const item_id = movie.id;
         getReservation(item_id).then((data) => {
@@ -87,11 +98,21 @@ const reservationPopup = () => {
           reservationCnt.innerHTML = `Reservations(${reservationCount(data)})`;
         });
         btnSubmit.addEventListener('click', async (e) => {
-          e.preventDefault();
           const username = document.querySelector('.name').value;
           const date_start = document.querySelector('.start-date').value;
           const date_end = document.querySelector('.end-date').value;
-          if (username && date_start) {
+          const errorElement = document.querySelector('.error-reservation');
+          if (!(username && date_start && date_end)) {
+            e.preventDefault();
+            errorElement.innerText = 'Please enter your name and your reservation date ';
+          } else if (date_start === date_end) {
+            e.preventDefault();
+            errorElement.innerText = 'Please enter different start and end dates';
+          } else if (findDate(date_start, date_end)) {
+            e.preventDefault();
+            errorElement.innerText = 'this date is reserve';
+          } else {
+            errorElement.innerText = '';
             const data = {
               item_id, username, date_start, date_end,
             };
