@@ -103,6 +103,19 @@ h5 {
   font-size: 2rem;
 }
 
+.reservation-list {
+  overflow: scroll;
+  height: 100px;
+
+  li {
+    display: flex;
+
+    p {
+      margin-right: 3px;
+    }
+  }
+}
+
 .container-comments {
   ul {
     li {
@@ -123,17 +136,6 @@ h5 {
 .error-reservation {
   color: red;
   font-size: 14px;
-}
-
-.reservation-list {
-  overflow: scroll;
-  height: 100px;
-  li{
-    display: flex;
-    p{
-      margin-right: 3px;
-    }
-  }
 }
 
 .img-reservation {
