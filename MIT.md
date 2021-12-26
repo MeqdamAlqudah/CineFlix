@@ -1,4 +1,4 @@
-## Copyright 2021, Evren Ersoy , Meqdam Al-qudah
+## Copyright 2021, Laxmi, Meqdam-Al-qudah ,Evren Ersoy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this Project and associated documentation files, to deal in the Project without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Project, and to permit persons to whom the Project is furnished to do so, subject to the following conditions:
 
