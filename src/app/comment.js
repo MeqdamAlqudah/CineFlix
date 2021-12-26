@@ -14,10 +14,10 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
     if (!username) {
       e.preventDefault();
       errorElement.innerText = 'Please enter your name and comment';
-    } else if (username.length > 30) {
+    } else if (username.length > 10) {
       e.preventDefault();
       errorElement.innerText = 'you just allowed to give 40 word length name';
-    } else if (comment.length > 100) {
+    } else if (comment.length > 30) {
       e.preventDefault();
       errorElement.innerText = 'you just allowed to give 99 word length comment';
     } else {
