@@ -3,8 +3,7 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
   const displayComments = (el) => {
     const ul = document.querySelector('.comments-list');
     const li = document.createElement('li');
-    const dateObj = new Date();
-    const date = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+    const date = `${el.creation_date}`;
     li.textContent = `${date}  ${el.username} : ${el.comment}`;
     ul.appendChild(li);
   };
@@ -53,7 +52,9 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
   counter(reciveCommentsApi, movie).then((json) => {
     const commentCounter = document.querySelector('body h6.count');
     const commentsArray = json;
-    commentCounter.innerHTML = `Comments <span class ="counter">${commentsArray.length}<span>`;
+    if (commentsArray.length) {
+      commentCounter.innerHTML = `Comments <span class ="counter">${commentsArray.length}<span>`;
+    }
   });
   reciveCommentsApi(movie.id).then((element) => (element.json()))
     .then((json) => {
