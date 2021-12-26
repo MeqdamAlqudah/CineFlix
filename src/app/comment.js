@@ -24,7 +24,7 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
       errorElement.innerText = '';
       const d = new Date();
       // eslint-disable-next-line camelcase
-      const creation_date = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+      const creation_date = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
 
       // Validate-contact-form function
       if (username && comment) {
