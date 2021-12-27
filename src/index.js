@@ -154,4 +154,4 @@ function display() {
   });
 }
 
-setTimeout(display, 2000);
+display();
