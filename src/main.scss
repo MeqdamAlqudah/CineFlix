@@ -8,6 +8,7 @@
 
 body {
   background-color: $primary-color;
+  overflow-y: scroll;
 }
 
 .footer {
@@ -38,7 +39,7 @@ body {
 }
 
 .modal-content-comments {
-  height: 100rem;
+  height: 104rem;
   background-color: #000000ba;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000), url(./images/Movie.svg);
   background-repeat: no-repeat;
