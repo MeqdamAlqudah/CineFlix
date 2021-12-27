@@ -5,7 +5,7 @@ const displayPopup = (element) => ` <div class="modal-content modal-content-comm
 </div>
 <div class="modal-body">
 <div class="img-container d-flex justify-content-center flex-column align-items-center">
-<h5 class="modal-title">${element.original_title}</h5>
+<h5 class="modal-title" id="staticBackdropLabel">${element.original_title}</h5>
 <img src="https://image.tmdb.org/t/p/w500${element.poster_path}" class="w-50"></div>
   <p class = "recaptitle">Movie Recap</p>
   <p class="recap">${element.overview}</p>
