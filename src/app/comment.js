@@ -14,17 +14,17 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
     if (!username) {
       e.preventDefault();
       errorElement.innerText = 'Please enter your name and comment';
-    } else if (username.length > 12) {
+    } else if (username.length > 20) {
       e.preventDefault();
-      errorElement.innerText = 'you just allowed to give 12 word length name';
-    } else if (comment.length > 40) {
+      errorElement.innerText = 'you just allowed to give 20 word length name';
+    } else if (comment.length > 50) {
       e.preventDefault();
       errorElement.innerText = 'you just allowed to give 40 word length comment';
     } else {
       errorElement.innerText = '';
       const d = new Date();
       // eslint-disable-next-line camelcase
-      const creation_date = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+      const creation_date = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
 
       // Validate-contact-form function
       if (username && comment) {
