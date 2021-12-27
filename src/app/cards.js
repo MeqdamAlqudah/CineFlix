@@ -9,7 +9,7 @@ const cards = (movie, index) => `<div class="card p-0" id="card" style="width: 1
       <span class="spn-like">N/A</span>
     </div>  
     <div class="h-50 d-flex flex-column gap-2">
-      <a href="#" class="btn btn-dark"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comments</a>
+      <button class="btn btn-dark"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Comments</button>
       <a href="#" class="btn btn-warning reservation-btn">Reservations</a>
     </div>  
     </div>
