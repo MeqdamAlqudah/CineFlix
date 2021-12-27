@@ -19,7 +19,7 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
       errorElement.innerText = 'you just allowed to give 20 word length name';
     } else if (comment.length > 50) {
       e.preventDefault();
-      errorElement.innerText = 'you just allowed to give 40 word length comment';
+      errorElement.innerText = 'you just allowed to give 50 word length comment';
     } else {
       errorElement.innerText = '';
       const d = new Date();
