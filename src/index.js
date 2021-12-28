@@ -142,9 +142,16 @@ function display() {
     movies.forEach((movie, index) => {
       const commentButton = document.querySelectorAll('.btn.btn-dark')[index];
       const modal = document.querySelector('.modal-dialog');
+      console.log(movie.overview.length);
       commentButton.addEventListener('click', () => {
         modal.innerHTML += displayPopup(movie);
         const close = document.querySelector('.btn-close');
+        const modalComment = document.querySelector('.modal-content-comments');
+        if (movie.overview.length > 400) {
+          modalComment.style.height = '100rem';
+        } else if (movie.overview.length > 200) {
+          modalComment.style.height = '88rem';
+        }
         close.addEventListener('click', () => {
           modal.innerHTML = '';
         });
