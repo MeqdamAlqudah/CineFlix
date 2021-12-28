@@ -1,10 +1,10 @@
-const cards = (movie) => `<div class="card p-0" id="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="Card image cap">
-    <div class="card-body">
+const cards = (movie) => `<div class="moviecard card p-0" id="card" style="width: 18rem;">
+    <img class="movieimg card-img-top" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="Card image cap">
+    <div class="moviebody card-body">
     <div class="h-25 w-100">
-      <h5 class="h6">${movie.title}</h5>
+      <h5 class="movietitle h6">${movie.title}</h5>
     </div>
-    <div class="h-25 w-100 d-flex flex-column align-items-end" id="${movie.id}"> 
+    <div class="movielikes h-25 w-100 d-flex flex-column align-items-end" id="${movie.id}"> 
       <a class="btn-like"></a>
       <span class="spn-like">N/A</span>
     </div>  

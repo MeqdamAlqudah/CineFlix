@@ -11,8 +11,81 @@ body {
   overflow-y: scroll;
 }
 
+.movienavbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+
+  .logo {
+    color: $reservation-color;
+
+    &:hover {
+      color: $reservation-color;
+      filter: blur(1px);
+    }
+  }
+}
+
+.btn-like {
+  width: 32px;
+  height: 32px;
+  background-image: url(./images/like-empty.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url(./images/like-filled.svg);
+  }
+}
+
+.moviecard {
+  border: none;
+
+  .movieimg {
+    max-height: 20rem;
+  }
+
+  .moviebody {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      clip-path: inset(28% 0 45% 0);
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  .movietitle {
+    font-size: 1.1rem;
+    color: $primary-color;
+  }
+
+  .movielikes {
+    margin-bottom: 12px;
+    z-index: 5;
+
+    .btn-like,
+    .spn-like {
+      z-index: 5;
+      color: $reservation-color;
+    }
+  }
+}
+
 .footer {
   border: 1px solid $primary-color;
+  background-color: rgba(0, 0, 0, 0.7);
   width: auto;
   height: 10vh;
   display: flex;
@@ -44,22 +117,6 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), #000), url(./images/Movie.svg);
   background-repeat: no-repeat;
   background-position: 0 97vh;
-}
-
-.btn-like {
-  width: 32px;
-  height: 32px;
-  background-image: url(./images/like-empty.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-
-  &:hover {
-    background-image: url(./images/like-filled.svg);
-  }
 }
 
 .comments-list {
