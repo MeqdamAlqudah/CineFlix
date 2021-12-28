@@ -1,6 +1,4 @@
-// const appId = 'kjflaxbas123';
-// const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
-const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rEViJgSZrOmcE6w0blo4/reservations/';
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/9uqyZOQFpDQg1vVFgpx9/reservations/';
 const getUrl = `${url}?item_id=`;
 const postReservation = async (data) => {
   const response = await fetch(url, {

@@ -2,7 +2,7 @@
 export const sendCommentsToApi = ({
   type, body,
 }) => {
-  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rEViJgSZrOmcE6w0blo4/comments';
+  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/9uqyZOQFpDQg1vVFgpx9/comments';
   fetch(url, {
     method: type,
     body,
@@ -13,7 +13,7 @@ export const sendCommentsToApi = ({
 };
 
 export const reciveCommentsApi = async (id) => {
-  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rEViJgSZrOmcE6w0blo4/comments?item_id=${id}`;
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/9uqyZOQFpDQg1vVFgpx9/comments?item_id=${id}`;
   const myRequest = new Request(url, {
     method: 'GET',
     headers: {
@@ -37,7 +37,7 @@ export const getData = async () => {
 };
 
 // Involvement API Likes Call
-const appKey = 'rEViJgSZrOmcE6w0blo4';
+const appKey = '9uqyZOQFpDQg1vVFgpx9';
 const involvementApiUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appKey}/`;
 export const getInvolvement = async (extension) => {
   const response = await fetch(`${involvementApiUrl}${extension}`);
