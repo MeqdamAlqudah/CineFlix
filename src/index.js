@@ -21,23 +21,23 @@ const modalReserve = document.getElementById('modal-reservation');
 const renderMovies = () => {
   getData().then((movies) => {
     moviesCount(movies, moviesCounter);
-    movies.forEach((movie, index) => {
-      movieList.innerHTML += cards(movie, index); // render the cards
+    movies.forEach((movie) => {
+      movieList.innerHTML += cards(movie); // render the cards
     });
     const spans = movieList.querySelectorAll('.spn-like');
     getInvolvement('likes').then((data) => {
-      displayLikes(spans, data);
+      displayLikes(movies, spans, data);
     });
   });
 };
 renderMovies();
 // Display Likes
-function addLikes() {
+async function addLikes() {
+  const likeApi = await getInvolvement('likes');
+  const movieApi = await getData();
   const parent = document.getElementById('movie-list');
   const spans = parent.querySelectorAll('.spn-like');
-  getInvolvement('likes').then((data) => {
-    displayLikes(spans, data);
-  });
+  displayLikes(movieApi, spans, likeApi);
 }
 // Add Likes
 (function likeEvent() {
