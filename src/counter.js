@@ -1,4 +1,2 @@
-const counter = (reciveCommentsApi, movie) => reciveCommentsApi(movie.id)
-  .then((element) => (element.json()));
-
+const counter = () => Number(document.querySelector('.comments-list').childElementCount);
 export default counter;

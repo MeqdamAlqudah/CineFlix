@@ -38,22 +38,12 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
         const type = 'POST';
         const obj = { type, body };
         sendCommentsToApi(obj);
-        counter(reciveCommentsApi, movie).then((json) => {
-          const commentCounter = document.querySelector('body h6.count');
-          const commentsArray = json;
-          commentCounter.innerHTML = `Comments <span class ="counter">${commentsArray.length + 1}<span>`;
-        });
         displayComments(el);
         document.querySelector('.Name').value = '';
         document.querySelector('.insights').value = '';
+        const commentCounter = document.querySelector('body h6.count');
+        commentCounter.innerHTML = `Comments <span class ="counter">${counter()}<span>`;
       }
-    }
-  });
-  counter(reciveCommentsApi, movie).then((json) => {
-    const commentCounter = document.querySelector('body h6.count');
-    const commentsArray = json;
-    if (commentsArray.length) {
-      commentCounter.innerHTML = `Comments <span class ="counter">${commentsArray.length}<span>`;
     }
   });
   reciveCommentsApi(movie.id).then((element) => (element.json()))
@@ -62,6 +52,8 @@ const displayCommentData = (movie, reciveCommentsApi, sendCommentsToApi, counter
       commentsArray.forEach((element) => {
         displayComments(element);
       });
+      const commentCounter = document.querySelector('body h6.count');
+      commentCounter.innerHTML = `Comments <span class ="counter">${counter()}<span>`;
     });
 };
 
